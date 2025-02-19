@@ -4,6 +4,7 @@ import { MaterialControlsComponent } from './components/material-controls/materi
 import { StructuralComponent } from './components/structural/structural.component';
 import { SingletonTestComponent } from './components/singleton-test/singleton-test.component';
 import { NonSingletonTestComponent } from './components/non-singleton-test/non-singleton-test.component';
+import { SignalDemoComponent } from './components/signal-demo/signal-demo.component';
 
 
 export const routes: Routes = [
@@ -30,11 +31,11 @@ export const routes: Routes = [
     component: NonSingletonTestComponent,
     outlet: "primary"
   },
-  //{
-  //  path: 'signal',
-  //  component: SignalDemoComponent,
-  //  outlet: "primary"
-  //},
+  {
+    path: 'signal',
+    component: SignalDemoComponent,
+    outlet: "primary"
+  },
  
   
  

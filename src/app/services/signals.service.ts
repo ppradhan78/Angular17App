@@ -3,9 +3,11 @@ import { Categories } from '../model/categories';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+  //{
+  //providedIn: 'root'
+  //}
+)
 export class SignalsService {
   private CategoriesSignal = signal<Categories[]>([]);
   constructor(private http: HttpClient) { }
