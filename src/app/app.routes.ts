@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { BootstrapControlsComponent } from './components/bootstrap-controls/bootstrap-controls.component';
 import { MaterialControlsComponent } from './components/material-controls/material-controls.component';
+import { StructuralComponent } from './components/structural/structural.component';
 
 
 export const routes: Routes = [
@@ -13,10 +14,10 @@ export const routes: Routes = [
     component: MaterialControlsComponent,
 
   },
-  //{
-  //  path: 'structural',
-  //  component: StructuralComponent
-  //},
+  {
+    path: 'structural',
+    component: StructuralComponent
+  },
   //{
   //  path: 'signal',
   //  component: SignalDemoComponent,

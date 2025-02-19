@@ -1,0 +1,32 @@
+<p>structural works!</p>
+<div *ngIf=" a > b">
+  A is grater
+</div>
+<div *ngIf=" b > a">
+  B is grater
+</div>
+<h1> New if</h1>
+
+@if(a>b){
+{{a}} : is grater than {{b}}
+}@else{
+{{b}} : is grater than {{a}}
+}
+<div *ngFor="let item of items">{{item}}</div>
+<h1> New for</h1>
+
+@for(item of items;track  item){
+<div>{{item}}</div>
+}
+@switch(userRole){
+@case("admin"){
+<p>User is admin</p>
+}
+@case("manager"){
+<p>User is manager</p>
+}
+@default{
+<p>Other</p>
+
+}
+}
