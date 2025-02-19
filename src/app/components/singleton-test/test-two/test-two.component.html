@@ -1,0 +1,7 @@
+<p>Enter a number</p>
+<input type="number" id="num" #txtNum />
+<button class="btn btn-primary" (click)="Add(txtNum.value)">Add</button>
+
+@for(num of numList;track num){
+<div>{{num}}</div>
+}

@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { BootstrapControlsComponent } from './components/bootstrap-controls/bootstrap-controls.component';
 import { MaterialControlsComponent } from './components/material-controls/material-controls.component';
 import { StructuralComponent } from './components/structural/structural.component';
+import { SingletonTestComponent } from './components/singleton-test/singleton-test.component';
+import { NonSingletonTestComponent } from './components/non-singleton-test/non-singleton-test.component';
 
 
 export const routes: Routes = [
@@ -18,21 +20,22 @@ export const routes: Routes = [
     path: 'structural',
     component: StructuralComponent
   },
+  {
+    path: 'singleton',
+    component: SingletonTestComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'nonsingleton',
+    component: NonSingletonTestComponent,
+    outlet: "primary"
+  },
   //{
   //  path: 'signal',
   //  component: SignalDemoComponent,
   //  outlet: "primary"
   //},
-  //{
-  //  path: 'singleton',
-  //  component: SingletonTestComponent,
-  //  outlet: "primary"
-  //},
-  //{
-  //  path: 'nonsingleton',
-  //  component: NonSingletonTestComponent,
-  //  outlet: "primary"
-  //},
+ 
   
  
 ];
