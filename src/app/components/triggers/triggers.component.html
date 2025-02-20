@@ -1,0 +1,13 @@
+<p>triggers works!</p>
+
+<div>
+  @defer{
+  <app-bootstrap-controls></app-bootstrap-controls>
+  }@placeholder(minimum 500ms){
+  <p>loading...please waite</p>
+  }@loading(after 100ms;minimum 1s){
+  <p>fatching ..contents...please waite</p>
+  }@error{
+  <p>failed to load  ..contents...</p>
+  }
+</div>

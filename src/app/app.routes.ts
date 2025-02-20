@@ -6,12 +6,15 @@ import { SingletonTestComponent } from './components/singleton-test/singleton-te
 import { NonSingletonTestComponent } from './components/non-singleton-test/non-singleton-test.component';
 import { SignalDemoComponent } from './components/signal-demo/signal-demo.component';
 import { ScssExampleComponent } from './components/scss-example/scss-example.component';
+import { SessionManagementComponent } from './components/session-management/session-management.component';
+import { TriggersComponent } from './components/triggers/triggers.component';
 
 
 export const routes: Routes = [
   {
     path: 'bootstrap',
     component: BootstrapControlsComponent,
+    title:"Bootstrap Works Fine"
   },
   {
     path: 'material',
@@ -42,6 +45,15 @@ export const routes: Routes = [
    component: ScssExampleComponent,
     outlet: "primary"
   },
+  {
+    path: 'session',
+    component: SessionManagementComponent,
+    outlet: "primary"
+  },
   
- 
+  {
+    path: 'trigger',
+    component: TriggersComponent,
+    outlet: "primary"
+  },
 ];
