@@ -1,0 +1,10 @@
+$defultFontSize:14px;
+p {
+  font-size: $defultFontSize;
+}
+h2 {
+  font-size: $defultFontSize*2;
+}
+h1 {
+  font-size: ($defultFontSize*2) + 10;
+}

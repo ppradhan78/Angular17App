@@ -5,6 +5,7 @@ import { StructuralComponent } from './components/structural/structural.componen
 import { SingletonTestComponent } from './components/singleton-test/singleton-test.component';
 import { NonSingletonTestComponent } from './components/non-singleton-test/non-singleton-test.component';
 import { SignalDemoComponent } from './components/signal-demo/signal-demo.component';
+import { ScssExampleComponent } from './components/scss-example/scss-example.component';
 
 
 export const routes: Routes = [
@@ -36,7 +37,11 @@ export const routes: Routes = [
     component: SignalDemoComponent,
     outlet: "primary"
   },
- 
+ {
+    path: 'scss',
+   component: ScssExampleComponent,
+    outlet: "primary"
+  },
   
  
 ];

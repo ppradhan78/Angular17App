@@ -1,0 +1,32 @@
+.btn {
+  background-color: rebeccapurple;
+  padding: 10px 10px;
+  box-shadow: 0px 0px 2px 2px #0094ff;
+}
+
+.btn-success {
+  @extend .btn;
+  background-color: burlywood;
+
+  &:hover {
+    background-color: darken(green,10%)
+  }
+}
+
+.btn-danger {
+  @extend .btn;
+  background-color: darkslategrey;
+
+  &:hover {
+    background-color: darken(red,10%)
+  }
+}
+
+.btn-info {
+  @extend .btn;
+  background-color: darkcyan;
+
+  &:hover {
+    background-color: darken(white,10%)
+  }
+}

@@ -1,0 +1,23 @@
+@import 'variable';
+@import 'mixins';
+div {
+  background-color: $div-bg-color;
+  padding:10px;
+  margin:10px;
+  ul {
+    @include highlightBox;
+    background-color: $ul-bg-color;
+
+    li {
+      list-style-type: none;
+
+      a {
+        color: green;
+      }
+    }
+  }
+}
+/*input css 
+div ul{}
+div ul li {
+}*/
