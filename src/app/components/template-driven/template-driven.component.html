@@ -1,1 +1,46 @@
 <p>template-driven works!</p>
+<div class="container">
+    <h2>Template Driven Form Example</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      
+      <!-- Name Field -->
+      <div>
+        <label>Name:</label>
+        <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required />
+        <div *ngIf="name.invalid && name.touched" class="error">Name is required</div>
+      </div>
+  
+      <!-- Email Field -->
+      <div>
+        <label>Email:</label>
+        <input type="email" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
+        <div *ngIf="email.invalid && email.touched" class="error">Enter a valid email</div>
+      </div>
+  
+      <!-- Gender Selection -->
+      <div>
+        <label>Gender:</label>
+        <select name="gender" [(ngModel)]="user.gender" required name="gender" #gender="ngModel">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div *ngIf="gender.invalid && gender.touched" class="error">select Gender</div>
+
+      </div>
+  
+      <!-- Accept Terms Checkbox -->
+      <div>
+        <input type="checkbox"  #terms="ngModel" name="terms" [(ngModel)]="user.terms" required />
+        <label>I accept terms and conditions</label>
+        <div *ngIf="terms.invalid && terms.touched" class="error">select terms</div>
+
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+    </form>
+  
+    <h3>Form Data:</h3>
+    <pre>{{ user | json }}</pre>
+  </div>
+  

@@ -8,6 +8,7 @@ import { SignalDemoComponent } from './components/signal-demo/signal-demo.compon
 import { ScssExampleComponent } from './components/scss-example/scss-example.component';
 import { SessionManagementComponent } from './components/session-management/session-management.component';
 import { TriggersComponent } from './components/triggers/triggers.component';
+import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 
 
 export const routes: Routes = [
@@ -54,6 +55,11 @@ export const routes: Routes = [
   {
     path: 'trigger',
     component: TriggersComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'template',
+    component: TemplateDrivenComponent,
     outlet: "primary"
   },
 ];
