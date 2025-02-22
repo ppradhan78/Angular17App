@@ -32,7 +32,12 @@
       </div>
       </div>
   
-      <button type="submit" class="btn btn-primary" >Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+      <button type="reset" class="btn .btn-light"  >Reset</button>
+      <button type="submit" class="btn btn-primary" (click)="fillValue()" >Fill</button>
+      <button type="submit" class="btn btn-primary" (click)="updateValue()" >Update</button>
+
+
     </form>
     <h3>Form Data:</h3>
     <pre>{{ userForm.value | json }}</pre>

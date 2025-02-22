@@ -21,11 +21,31 @@ export class ReactiveFormsComponent {
   }
 
   onSubmit() {
-    debugger;
+    
     if (this.userForm.valid) {
       console.log('Form Submitted', this.userForm.value);
+      console.log('Form Submitted', this.userForm.get('name')?.value);
+     
+
     } else {
       console.log('Form is invalid');
     }
+  }
+fillValue(){
+  this.userForm.setValue({
+    "name": "Prasanta",
+    "email": "prasanta@gmail.com",
+    "password": "Prasanta@123"
+  })
+}
+updateValue(){
+  this.userForm.patchValue({
+    "name": "ppradhan",
+    "email": "ppradhan@gmail.com",
+    "password": "Password@123"
+  })
+}
+  onReset(){
+    this.userForm.reset();
   }
 }
