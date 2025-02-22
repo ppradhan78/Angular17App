@@ -36,25 +36,17 @@
     <label>Mobile Number:</label>
     <div style="display: flex;">
         <input type="mobile" [formControlName]="indx" />
+        <div *ngIf="userForm.controls['mobiles'].controls[indx].touched && !userForm.controls['mobiles'].controls[indx].valid ">
+            <small *ngIf="userForm.controls['mobiles'].controls[indx].errors?.['minlength']">Minimum 10 characters required.</small> 
+            <small *ngIf="userForm.controls['mobiles'].controls[indx].errors?.['maxlength']">MaxLength 10 characters required.</small> 
+      </div>
         <button class='bi bi-trash' style="height: 25px;align-items: center;" (click)="delete(indx)"></button>
     </div>
 </div>
 <button class="bi bi-plus" (click)="Add()" style="height: 25px;"></button>
   </div>
-      <!-- <div>
-        <label>Mobile Number:</label>
-        <input type="mobile" formControlName="mobile" />
-        <div *ngIf="userForm.controls['mobile'].touched && !userForm.controls['mobile'].valid ">
-            <small *ngIf="userForm.controls['mobile'].errors?.['minlength']">Minimum 10 characters required.</small> 
-            <small *ngIf="userForm.controls['mobile'].errors?.['maxlength']">MaxLength 10 characters required.</small> 
-      </div>
-      </div> -->
-
-      <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+      <button type="submit" class="btn btn-primary" >Submit</button>
       <button type="reset" class="btn .btn-light"  >Reset</button>
-
-
-
     </form>
     <h3>Form Data:</h3>
     <pre>{{ userForm.value | json }}</pre>
