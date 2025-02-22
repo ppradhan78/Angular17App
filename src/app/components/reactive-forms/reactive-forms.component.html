@@ -1,1 +1,40 @@
-<p>reactive-forms works!</p>
+<div class="container">
+    <h2>Reactive Form Example</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      
+      <div>
+        <label>Name:</label>
+        <input type="text" formControlName="name" />
+        <div *ngIf="userForm.controls['name'].touched && !userForm.controls['name'].valid ">
+          <small *ngIf="userForm.controls['name'].errors?.['required']">Name is required.</small>
+          <small *ngIf="userForm.controls['name'].errors?.['minlength']">Minimum 8 characters required.</small> 
+          <small *ngIf="userForm.controls['name'].errors?.['maxlength']">MaxLength 12 characters required.</small> 
+        </div>
+      </div> 
+  
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email" />
+        <div *ngIf="userForm.controls['email'].touched && !userForm.controls['email'].valid ">
+          <small *ngIf="userForm.controls['email'].errors?.['required']">Email is required.</small>
+        <small *ngIf="userForm.controls['email'].errors?.['email']">Invalid email format.</small> 
+      </div>
+        
+      </div>
+  
+      <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password" />
+        <div *ngIf="userForm.controls['password'].touched && !userForm.controls['password'].valid ">
+          <small *ngIf="userForm.controls['password'].errors?.['required']">Password is required.</small>
+        <small *ngIf="userForm.controls['password'].errors?.['minlength']">Minimum 10 characters required.</small>
+        <small *ngIf="userForm.controls['password'].errors?.['maxlength']">MaxLength 15 characters required.</small> 
+      </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+    <h3>Form Data:</h3>
+    <pre>{{ userForm.value | json }}</pre>
+  </div>
+  

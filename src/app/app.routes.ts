@@ -9,6 +9,7 @@ import { ScssExampleComponent } from './components/scss-example/scss-example.com
 import { SessionManagementComponent } from './components/session-management/session-management.component';
 import { TriggersComponent } from './components/triggers/triggers.component';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 
 export const routes: Routes = [
@@ -60,6 +61,11 @@ export const routes: Routes = [
   {
     path: 'template',
     component: TemplateDrivenComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'reactive',
+    component: ReactiveFormsComponent,
     outlet: "primary"
   },
 ];
