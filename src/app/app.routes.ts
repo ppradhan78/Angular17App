@@ -10,6 +10,7 @@ import { SessionManagementComponent } from './components/session-management/sess
 import { TriggersComponent } from './components/triggers/triggers.component';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
+import { DynamicallyReactiveFormsComponent } from './components/dynamically-reactive-forms/dynamically-reactive-forms.component';
 
 
 export const routes: Routes = [
@@ -66,6 +67,11 @@ export const routes: Routes = [
   {
     path: 'reactive',
     component: ReactiveFormsComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'dreactive',
+    component: DynamicallyReactiveFormsComponent,
     outlet: "primary"
   },
 ];

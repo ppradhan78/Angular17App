@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-reactive-forms',
@@ -29,6 +29,13 @@ export class ReactiveFormsComponent implements OnInit {
     this.userForm.get('name')?.statusChanges.subscribe(name=>{
       console.log('name value:'+name);
     })
+
+    let fromArray=new FormArray([
+      new FormControl("",[Validators.required,Validators.minLength(10)]),
+      new FormControl("")
+    ])
+    debugger;
+    console.log(fromArray.value)
   }
 
   onSubmit() {
