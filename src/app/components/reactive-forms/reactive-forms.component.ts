@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   templateUrl: './reactive-forms.component.html',
   styleUrl: './reactive-forms.component.scss'
 })
-export class ReactiveFormsComponent {
+export class ReactiveFormsComponent implements OnInit {
   userForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -18,6 +18,17 @@ export class ReactiveFormsComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(10),Validators.maxLength(15)]]
     });
+
+   
+  }
+  ngOnInit(): void {
+    this.userForm.get('name')?.valueChanges.subscribe(name=>{
+      console.log('name value:'+name);
+    })
+
+    this.userForm.get('name')?.statusChanges.subscribe(name=>{
+      console.log('name value:'+name);
+    })
   }
 
   onSubmit() {
@@ -48,4 +59,5 @@ updateValue(){
   onReset(){
     this.userForm.reset();
   }
+  
 }
