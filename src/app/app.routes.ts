@@ -11,6 +11,8 @@ import { TriggersComponent } from './components/triggers/triggers.component';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 import { DynamicallyReactiveFormsComponent } from './components/dynamically-reactive-forms/dynamically-reactive-forms.component';
+import { EmployeeComponent } from './components/reactive-forms/employee/employee.component';
+import { FormValidationComponent } from './components/reactive-forms/form-validation/form-validation.component';
 
 
 export const routes: Routes = [
@@ -72,6 +74,16 @@ export const routes: Routes = [
   {
     path: 'dreactive',
     component: DynamicallyReactiveFormsComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'emp',
+    component: EmployeeComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'rfv',
+    component: FormValidationComponent,
     outlet: "primary"
   },
 ];
