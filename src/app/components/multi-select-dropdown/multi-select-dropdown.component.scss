@@ -1,0 +1,44 @@
+.dropdown {
+  width: 250px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-header {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+.dropdown-list li {
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-list li:hover {
+  background: #f0f0f0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.arrow {
+  margin-left: auto;
+}

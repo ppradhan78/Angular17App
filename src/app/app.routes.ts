@@ -13,6 +13,7 @@ import { ReactiveFormsComponent } from './components/reactive-forms/reactive-for
 import { DynamicallyReactiveFormsComponent } from './components/dynamically-reactive-forms/dynamically-reactive-forms.component';
 import { EmployeeComponent } from './components/reactive-forms/employee/employee.component';
 import { FormValidationComponent } from './components/reactive-forms/form-validation/form-validation.component';
+import { ValidatorExampleComponent } from './components/validator-example/validator-example.component';
 
 
 export const routes: Routes = [
@@ -84,6 +85,11 @@ export const routes: Routes = [
   {
     path: 'rfv',
     component: FormValidationComponent,
+    outlet: "primary"
+  },
+  {
+    path: 've',
+    component: ValidatorExampleComponent,
     outlet: "primary"
   },
 ];

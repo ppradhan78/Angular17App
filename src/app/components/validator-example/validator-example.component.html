@@ -1,0 +1,69 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>User Name:</label>
+    <input type="text" formControlName="username" />
+    <div *ngIf="registrationForm.controls['username'].touched && !registrationForm.controls['username'].valid ">
+      <small *ngIf="registrationForm.controls['username'].errors?.['required']">Name is required.</small>
+      {{registrationForm.controls['username'].value}}  {{ registrationForm.controls['username']?.errors?.['username']?.usernameTaken }} username alredy taken please try again.
+    </div>
+  </div>
+
+  <div>
+    <label>Password:</label>
+    <input type="text" formControlName="password" />
+    <div *ngIf="registrationForm.controls['password'].touched && !registrationForm.controls['password'].valid ">
+      <small *ngIf="registrationForm.controls['password'].errors?.['required']">Password is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Conform Password:</label>
+    <input type="text" formControlName="conformPassword" />
+    <div *ngIf="registrationForm.controls['conformPassword'].touched && !registrationForm.controls['conformPassword'].valid ">
+      <small *ngIf="registrationForm.controls['conformPassword'].errors?.['required']">Conform password is required.</small>
+      {{registrationForm.controls['conformPassword'].value}}  {{ registrationForm.controls['conformPassword']?.errors?.['equality']?.equality }}  Password & conformPassword missmatch.
+    </div>
+  </div>
+
+  <div>
+    <label for="birthdate">Birthdate:</label>
+    <input id="birthdate" formControlName="birthdate" type="date">
+    <div *ngIf="registrationForm.controls['birthdate'].touched && !registrationForm.controls['birthdate'].valid">
+      You must be at least
+      {{ registrationForm.controls['birthdate']?.errors?.['minimumAge']?.requiredAge }} years old.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="text">
+    <div *ngIf="registrationForm.controls['email'].touched && !registrationForm.controls['email'].valid ">
+      <small *ngIf="registrationForm.controls['email'].errors?.['required']">email is required.</small>
+      {{registrationForm.controls['email'].value}}  {{ registrationForm.controls['email']?.errors?.['emailDomain']?.emailDomain }} invalid offical emailid.emailid should ended with wellsfargo.com"
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Age:</label>
+    <input id="age" formControlName="age" type="text">
+    <div *ngIf="registrationForm.controls['age'].touched && !registrationForm.controls['age'].valid ">
+      <small *ngIf="registrationForm.controls['age'].errors?.['required']">age is required.</small>
+      <small *ngIf="registrationForm.controls['age']?.errors?.['rangeValidation'].rangeValidation">{{registrationForm.controls['age'].value}}    : is invalid age.</small>
+      {{registrationForm.controls['age']?.errors?.['rangeValidation'].rangeValidation | json}}
+    </div>
+  </div>
+
+  <!--<div>
+    <input formControlName="name">
+    <div *ngIf="registrationForm.controls['name'].pending">
+      Checking username availability...
+    </div>-->
+
+    <!-- Display error message if the username is taken -->
+    <!--<div *ngIf="registrationForm.controls['name'].errors?.['usernameTaken']">
+      This username is already taken.
+    </div>
+  </div>-->
+  <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Submit</button>
+
+</form>
