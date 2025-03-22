@@ -14,6 +14,7 @@ import { DynamicallyReactiveFormsComponent } from './components/dynamically-reac
 import { EmployeeComponent } from './components/reactive-forms/employee/employee.component';
 import { FormValidationComponent } from './components/reactive-forms/form-validation/form-validation.component';
 import { ValidatorExampleComponent } from './components/validator-example/validator-example.component';
+import { PipeExampleComponent } from './components/pipe-example/pipe-example.component';
 
 
 export const routes: Routes = [
@@ -90,6 +91,11 @@ export const routes: Routes = [
   {
     path: 've',
     component: ValidatorExampleComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'pe',
+    component: PipeExampleComponent,
     outlet: "primary"
   },
 ];
