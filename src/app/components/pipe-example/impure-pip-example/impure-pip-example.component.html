@@ -1,0 +1,32 @@
+<input [(ngModel)]="searchText" placeholder="Search" />
+<button (click)="addItem()">Add Item</button>
+<label style="color:red;">  count Updated : {{count}}</label><br />
+<label style="color:yellowgreen;">load count : {{loadCount}}</label>
+<table>
+  <tr>
+    <td>
+      Impure
+    </td>
+    <td>
+      Async
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li *ngFor="let item of customers | customerFilterImpure:searchText">
+          {{ item.contactName }}
+        </li>
+      </ul>
+
+    </td>
+    <td>
+      <ul>
+        <li *ngFor="let item of custs | async">
+          {{ item.customerId }}
+        </li>
+      </ul>
+
+    </td>
+  </tr>
+</table>

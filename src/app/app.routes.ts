@@ -15,6 +15,9 @@ import { EmployeeComponent } from './components/reactive-forms/employee/employee
 import { FormValidationComponent } from './components/reactive-forms/form-validation/form-validation.component';
 import { ValidatorExampleComponent } from './components/validator-example/validator-example.component';
 import { PipeExampleComponent } from './components/pipe-example/pipe-example.component';
+import { ImpurePipExampleComponent } from './components/pipe-example/impure-pip-example/impure-pip-example.component';
+import { InterceptorExampleComponent } from './components/interceptor-example/interceptor-example.component';
+import { DirectiveExampleComponent } from './components/directive-example/directive-example.component';
 
 
 export const routes: Routes = [
@@ -96,6 +99,21 @@ export const routes: Routes = [
   {
     path: 'pe',
     component: PipeExampleComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'ipe',
+    component: ImpurePipExampleComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'int',
+    component: InterceptorExampleComponent,
+    outlet: "primary"
+  },
+  {
+    path: 'de',
+    component: DirectiveExampleComponent,
     outlet: "primary"
   },
 ];

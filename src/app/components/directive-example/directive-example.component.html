@@ -1,0 +1,11 @@
+<p>directive-example works!</p>
+<p>appNoNumbers</p>
+<input type="text" name="Name" id="name" appNoNumbers />
+<p>passwordStrength</p>
+<input type="password" appPasswordStrength (strengthChange)="changeStrength($event)">
+<div>
+  @if (passwordStrength) {
+  Password Strength: {{ passwordStrength }}
+  }
+</div>
+<button appTooltip="This is a tooltip!">Hover me</button>
